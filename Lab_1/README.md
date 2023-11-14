@@ -31,4 +31,20 @@ RUN apt-get -y upgrade
 ENTRYPOINT ["python3"]
 CMD ["server.py"]
 ```
+#### Запуск Dockerfile_bad
 ![img1](./bad.jpg)
+
+# Dockerfile_good
+В хорошем файле были исправлены все bad practices и решение стало качественнее
+```
+FROM python:alpine
+
+LABEL version="good"
+
+WORKDIR home/web/
+COPY ./web-server .
+
+ENTRYPOINT ["python3", "server.py"]
+EXPOSE 8080
+```
+![img1](./good.jpg)
