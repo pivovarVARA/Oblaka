@@ -31,3 +31,4 @@ RUN apt-get -y upgrade
 ENTRYPOINT ["python3"]
 CMD ["server.py"]
 ```
+![img1](./bad.jpg)
