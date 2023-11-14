@@ -1,0 +1,9 @@
+FROM python:alpine
+
+LABEL version="good"
+
+WORKDIR home/web/
+COPY ./web-server .
+
+ENTRYPOINT ["python3", "server.py"]
+EXPOSE 8080

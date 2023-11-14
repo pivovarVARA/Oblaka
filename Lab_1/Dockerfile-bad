@@ -1,0 +1,15 @@
+FROM python:latest
+
+LABEL version="bad"
+
+RUN apt-get update
+RUN apt-get -y upgrade
+
+RUN mkdir hell && cd hell
+WORKDIR /hell
+
+ADD /web-server .
+
+ENTRYPOINT ["python3"]
+CMD ["server.py"]
+EXPOSE 8080
