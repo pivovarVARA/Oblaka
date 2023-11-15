@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: hell
+  labels:
+    app: hell
+
+spec:
+  selector:
+    matchLabels:
+      app: hell
+
+  replicas: 2
+
+  template:
+    metadata:
+      name: hell
+      labels:
+        app: hell
+    spec:
+      containers:
+        - name: hell
+          image: vdevxx/hell2
