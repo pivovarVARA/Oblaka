@@ -29,7 +29,7 @@ minikube start --vm-driver=docker
 
 Создадим YAML-файл, в котором опишем Deployment – ресурс Kubernetes, предназначенный для развертывания приложений и их обновления декларативным образом
 ```
-apiVersion: apps/v1
+apiVersion: v1
 kind: Deployment
 
 metadata:
