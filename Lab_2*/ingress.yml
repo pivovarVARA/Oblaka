@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress
+  namespace: default
+
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+      - hell.lab2
+      secretName: secret-lab2
+  rules:
+    - host: "hell.lab2"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: lab2-hell
+                port:
+                  number: 80
